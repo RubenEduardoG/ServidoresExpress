@@ -94,7 +94,12 @@ class ProductManager {
     }
 }
 
-const productManager = new ProductManager("path_to_your_file.json");
+async function testBuscadoPorId(id) {
+    const encontrado = await manager.getProductById(id)
+    console.log(encontrado)
+}
+
+const productManager = new ProductManager("./nuevos_productos.json");
 productManager.addProduct({
     title: "Loros Barranqueros Titular",
     description: "Camiseta Titular 2024",
